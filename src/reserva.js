@@ -19,7 +19,7 @@ function reserva (props){
             <div className="nav-list">
               <h2>Unibrary</h2>
               <Link to="./home" className="li">Início</Link>
-              <Link to="./App" className="li">Acervo</Link>
+              <Link to="./acervo" className="li">Acervo</Link>
               <Link to="./reserva" className="li">Reserva</Link><small>(Access without token only)</small>
               <Link to="./contato" className="li">Contato</Link><small>(Access without token only)</small>
               <Link to="./login" className="botn btn1">Login</Link>

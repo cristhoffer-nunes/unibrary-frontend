@@ -13,7 +13,7 @@ function contato (){
             <div className="nav-list">
               <h2>Unibrary</h2>
               <Link to="./home" className="li">Início</Link>
-              <Link to="./App" className="li">Acervo</Link>
+              <Link to="./acervo" className="li">Acervo</Link>
               <Link to="./reserva" className="li">Reserva</Link>
               <Link to="./contato" className="li">Contato</Link>
               <Link to="./login" className="botn btn1">Login</Link>

@@ -18,7 +18,7 @@ function reserva (props){
               <Link to="./acervo" className="li">Acervo</Link>
               <Link to="./reserva" className="li">Reserva</Link>
               <Link to="./contato" className="li">Contato</Link>
-              <Link to="./login" className="botn btn1">Login</Link>
+              <Link to="./login" className="botn btn1">Sair</Link>
             </div>
             </Nav>
             </Container>

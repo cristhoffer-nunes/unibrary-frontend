@@ -1,6 +1,6 @@
 import ListItem from './components/ListItem';
 import { Container } from 'react-bootstrap';
-import { getBooks } from './services/BooksService';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from './components/SearchBar';
@@ -8,6 +8,8 @@ import './App.css';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
+
+const url = `http://localhost:8080/v1/api/acervo`;
 
 const ListContainer = styled.div`
   display: flex;
@@ -20,8 +22,10 @@ function Acervo() {
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
-    setBooks(getBooks());
-  }, [])
+    axios.get(url).then(response => {
+      setBooks(response.data);
+    })
+  }, []);
 
   return (
     <Container className="body">
@@ -36,7 +40,7 @@ function Acervo() {
               <Link to="./acervo" className="li">Acervo</Link>
               <Link to="./reserva" className="li">Reserva</Link>
               <Link to="./contato" className="li">Contato</Link>
-              <Link to="./login" className="botn btn1">Login</Link>
+              <Link to="./login" className="botn btn1">Sair</Link>
               </div>
             </Nav>
             </header>

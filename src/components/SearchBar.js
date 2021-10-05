@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import { InputGroup, FormControl, Button, Form, Col } from 'react-bootstrap';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getBooks } from '../services/BooksService';
+
+import axios from 'axios';
+const url = `http://localhost:8080/v1/api/acervo`;
+
 
 const SearchHeader = styled.div`
     margin-top: 4px;
@@ -13,9 +16,9 @@ function SearchBar(props) {
 
     const [search, setSearch] = useState('');
     
-        function handleOnSubmit(event) {
+    async function handleOnSubmit(event) {
             event.preventDefault();
-            const books = getBooks();
+            const books = await axios.get(url).then(response => response.data);
             const results = books.filter(book => book.titulo.toLowerCase().indexOf(search) !== -1);
             props.setBooks(results);
         }

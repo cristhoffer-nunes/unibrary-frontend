@@ -1,10 +1,10 @@
-import ListItem from './components/ListItem';
+import ListItem from './ListItem';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import SearchBar from './components/SearchBar';
-import './App.css';
+import SearchBar from './SearchBar';
+import '../../App.css';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';

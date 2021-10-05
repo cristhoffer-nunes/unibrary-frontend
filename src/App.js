@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
 import './App.css';
-import Routes from './routes';
+import Routes from './components/rotas/routes';
 
  
 function App() {

@@ -1,11 +1,13 @@
 import { Container, Nav } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import './App.css';
+import '../App.css';
 
-function contato (){
+function reserva (props){
+
     return(
         <Container className="body">
+
         <div>
           <Navbar bg="primary" variant="dark">
             <Container>
@@ -22,8 +24,9 @@ function contato (){
             </Container>
           </Navbar>
         </div>
+
         </Container>
     )
 }
 
-export default contato;
+export default reserva;

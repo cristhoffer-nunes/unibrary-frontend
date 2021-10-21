@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ErrorMessage, Formik, Form, Field } from 'formik'
+import { Formik, Form, Field } from 'formik'
 import axios from 'axios'
 import { history } from '../../history'
 
@@ -12,7 +12,7 @@ import imgLogin from '../../img/imgLogin.png'
 
 const Login = () => {
     const handleSubmit = (values) => {
-        axios.post("http://localhost:8080/v1/api/auth", {
+        axios.post("https://unibrary.herokuapp.com/v1/api/auth", {
             numeroMatricula: values.numeroMatricula,
             senha: values.senha,
         }).then((response) => {
@@ -20,13 +20,14 @@ const Login = () => {
                 const { data } = response
                 if (data) {
                     localStorage.setItem('app-token', data.result)
-                    history.push('/home')
-                    window.location.reload()
+                    history.push('/home')   
+                    window.location.reload()            
                 }
-
-
             }
-            else history.push('/login')
+        }).catch((reject) => {
+            alert("Dados invalidos ou usuário inativo.")
+            history.push('/login')
+            window.location.reload()
         })
     };
 
@@ -34,10 +35,11 @@ const Login = () => {
     return (
         <Container className="corpo">
             <div className="container-login">
-            <img src={imgLogin} className="foto-login"></img>
-            <Formik initialValues={{}} onSubmit={handleSubmit}>
+            <img src={imgLogin} className="foto-login" alt="library"></img>
+            <div className="form">
+            <Formik initialValues={ {} || ''} onSubmit={handleSubmit}>
 
-                <Form className="Login">
+                <Form>
                     <div className="titulo-form">
                         LOGIN
                     </div>
@@ -47,12 +49,13 @@ const Login = () => {
                     </label>
                     <label>
                         <div className="input-txt">Senha:</div>
-                        <Field name="senha" className="input-dado" />
+                        <Field name="senha" type="password" className="input-dado" />
                     </label>
 
                     <button type="submit" className="botn btn2">Entrar</button>
                 </Form>
             </Formik>
+            </div>
             </div>
         </Container>
     )

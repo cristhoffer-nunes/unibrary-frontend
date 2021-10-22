@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { history } from '../../history';
 
-const url = `http://localhost:8080/v1/api/acervo`;
+const url = `https://unibrary.herokuapp.com/v1/api/acervo`;
 
 const ListContainer = styled.div`
   display: flex;
@@ -20,6 +20,14 @@ const ListContainer = styled.div`
 `;
  
 function Acervo() {
+  
+    const handleClick = () => {
+  
+      localStorage.removeItem('app-token')
+      history.push('/login')
+      window.location.reload()
+    }
+    
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
@@ -27,13 +35,6 @@ function Acervo() {
       setBooks(response.data);
     })
   }, []);
-
-  const handleClick = () => {
-
-    localStorage.removeItem('app-token')
-    history.push('/login')
-    window.location.reload()
-  }
 
   return (
     <Container className="body">

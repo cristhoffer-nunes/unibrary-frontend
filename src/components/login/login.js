@@ -6,6 +6,7 @@ import { history } from '../../history'
 
 import { Container } from 'react-bootstrap';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 import imgLogin from '../../img/imgLogin.png'
 
 
@@ -51,10 +52,10 @@ const Login = () => {
                         <div className="input-txt">Senha:</div>
                         <Field name="senha" type="password" className="input-dado" />
                     </label>
-
                     <button type="submit" className="botn btn2">Entrar</button>
                 </Form>
             </Formik>
+
             </div>
             </div>
         </Container>

@@ -19,6 +19,7 @@ function SearchBar(props) {
     async function handleOnSubmit(event) {
             event.preventDefault();
             const books = await axios.get(url).then(response => response.data);
+            console.log(books)
             const results = books.filter(book => book.titulo.toLowerCase().indexOf(search) !== -1);
             props.setBooks(results);
         }

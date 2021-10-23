@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 import imgLogin from '../../img/imgLogin.png'
 
 
@@ -27,7 +28,7 @@ function login (){
                     <div className="input-txt">Senha:</div>
                     <input type="password" name="senha" className="input-dado" required/>
                 </label>
-                <button type="submit" className="botn btn2">Entrar</button>
+                <Link to="/home" type="submit" className="botn btn2">Entrar</Link>
                 </form>
             </div>
             </div>

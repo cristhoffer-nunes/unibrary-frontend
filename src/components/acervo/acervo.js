@@ -8,8 +8,9 @@ import '../../App.css';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
+import { history } from '../../history';
 
-const url = `http://localhost:8080/v1/api/acervo`;
+const url = `https://unibrary.herokuapp.com/v1/api/acervo`;
 
 const ListContainer = styled.div`
   display: flex;
@@ -19,6 +20,14 @@ const ListContainer = styled.div`
 `;
  
 function Acervo() {
+  
+    const handleClick = () => {
+  
+      localStorage.removeItem('app-token')
+      history.push('/login')
+      window.location.reload()
+    }
+    
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
@@ -40,7 +49,7 @@ function Acervo() {
               <Link to="./acervo" className="li">Acervo</Link>
               <Link to="./reserva" className="li">Reserva</Link>
               <Link to="./contato" className="li">Contato</Link>
-              <Link to="./login" className="botn btn1">Sair</Link>
+              <button className="botn btn1" onClick={handleClick}>Sair</button>
               </div>
             </Nav>
             </header>

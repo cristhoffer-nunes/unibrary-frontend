@@ -6,17 +6,17 @@ import Acervo from "../acervo/acervo";
 import reserva from "../reserva";
 import contato from "../contato";
 import login from "../login/login"
-
+import PrivateRoute from "../privateroute";
 
 const Routes = () => {
    return(
        <BrowserRouter>
        <Switch>
-           <Route component = { Home } path="/home"/>
-           <Route component = { Acervo }  path="/acervo" />
-           <Route component = { reserva } path="/reserva"/>
-           <Route component = { contato } path="/contato"/>
-           <Route component = { login } path="/login"/>
+           <PrivateRoute component = { Home } path="/home"/>
+           <PrivateRoute component = { Acervo }  path="/acervo" />
+           <PrivateRoute component = { reserva } path="/reserva"/>
+           <PrivateRoute component = { contato } path="/contato"/>
+           <Route component = { login } path="/"/>
         </Switch>
        </BrowserRouter>
    )

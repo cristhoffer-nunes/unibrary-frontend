@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import axios from 'axios';
-const url = `http://localhost:8080/v1/api/acervo`;
+const url = `https://unibrary.herokuapp.com/v1/api/acervo`;
 
 
 const SearchHeader = styled.div`
@@ -19,9 +19,8 @@ function SearchBar(props) {
     async function handleOnSubmit(event) {
             event.preventDefault();
             const books = await axios.get(url).then(response => response.data);
-            console.log(books)
             const results = books.filter(book => book.titulo.toLowerCase().indexOf(search) !== -1);
-            props.setBooks(results);
+            props.setBooks(results)
         }
 
         function handleSearchChange(event) {

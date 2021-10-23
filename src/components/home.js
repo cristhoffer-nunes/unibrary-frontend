@@ -5,8 +5,17 @@ import '../App.css';
 import Foto1 from '../img/Chapeu.png'
 import Smile from '../img/smile.png'
 import Book from '../img/book.png'
+import { history } from '../history'
 
 function home (){
+
+  const handleClick = () => {
+
+    localStorage.removeItem('app-token')
+    history.push('/login')
+    window.location.reload()
+  }
+
     return(
         <Container className="body">
 
@@ -20,7 +29,7 @@ function home (){
               <Link to="./acervo" className="li">Acervo</Link>
               <Link to="./reserva" className="li">Reserva</Link>
               <Link to="./contato" className="li">Contato</Link>
-              <Link to="./login" className="botn btn1">Sair</Link>
+              <button className="botn btn1" onClick={handleClick}>Sair</button>
               </div>
             </Nav>
             </header>

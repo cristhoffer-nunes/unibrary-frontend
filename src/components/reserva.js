@@ -3,6 +3,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import { history } from '../history'
+import { Formik, Field } from 'formik';
+import { Form } from 'react-bootstrap';
 
 function reserva (props){
 
@@ -31,6 +33,27 @@ function reserva (props){
             </Nav>
             </Container>
           </Navbar>
+        </div>
+
+        <div>
+        <Formik initialValues={ {} || ''} >
+
+        <Form>
+            <div>
+                RESERVA
+            </div>
+            <label>
+                <div>Número de Matrícula:</div>
+                <Field name="numeroMatricula" />
+            </label>
+            <label>
+                <div>Código da Obra:</div>
+                <Field name="codigoObra"/>
+            </label>
+            <button type="submit" >Entrar</button>
+        </Form>
+        </Formik>
+
         </div>
 
         </Container>

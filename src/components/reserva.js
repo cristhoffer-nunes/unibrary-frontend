@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import axios from 'axios'
-import { Alert, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
@@ -10,14 +10,14 @@ import { history } from '../history';
 
 const reserva = () => {
     const handleSubmit = (values) => {
-        axios.post("http://localhost:8080/v1/api/reserva", {
+        axios.post("https://unibrary.herokuapp.com/v1/api/reserva", {
             numeroMatricula: values.numeroMatricula,
             obra: values.obra,
         }).then((response) => {
-         Alert('Reserva feita com sucesso!')
+          alert('Reserva feita.')
          window.location.reload()
       }).catch((reject) => {
-        Alert('Não é possível fazer mais de 2 reservas!')
+        alert('Não é possivel fazer mais de 2 reservas.')
         window.location.reload()
       })
     };

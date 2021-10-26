@@ -4,7 +4,7 @@ import { InputGroup, FormControl, Button, Form, Col } from 'react-bootstrap';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import axios from 'axios';
+import Axios from 'axios';
 const url = `https://unibrary.herokuapp.com/v1/api/acervo`;
 
 
@@ -18,7 +18,7 @@ function SearchBar(props) {
     
     async function handleOnSubmit(event) {
             event.preventDefault();
-            const books = await axios.get(url).then(response => response.data);
+            const books = await Axios.get(url).then(response => response.data);
             const results = books.filter(book => book.titulo.toLowerCase().indexOf(search) !== -1);
             props.setBooks(results)
         }

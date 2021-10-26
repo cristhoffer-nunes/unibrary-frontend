@@ -71,7 +71,7 @@ function Acervo() {
             paginas={book.qtd_paginas}
             obras={book.qtd_obras}
             disponibilidade={book.disponibilidade}
-            codigo={book.codigo_obra}
+            codigo={book.id}
           />
         )
       })}

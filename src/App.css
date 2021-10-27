@@ -117,8 +117,6 @@
     width: 600px;
     border-radius: 5px;
     border: none;
-    margin-right: 40px;
-    padding-left: 10px;
     font-size: 22px;
 }
 
@@ -168,7 +166,7 @@
     background-color: #1d1d1d;
     position:absolute;
     bottom: -10;
-    width:100%;
+    width: 1329px;
     padding: 10px;
 }
 
@@ -347,3 +345,4 @@
 .input-txt{
     margin-bottom: 10px;
 }
+

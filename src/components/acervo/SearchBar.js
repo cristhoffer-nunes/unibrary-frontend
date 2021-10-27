@@ -10,6 +10,8 @@ const url = `https://unibrary.herokuapp.com/v1/api/acervo`;
 
 const SearchHeader = styled.div`
     margin-top: 4px;
+    text-aling: center;
+    margin-left: 5%;
 `;
 
 function SearchBar(props) {

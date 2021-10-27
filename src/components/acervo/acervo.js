@@ -14,9 +14,9 @@ const url = `https://unibrary.herokuapp.com/v1/api/acervo`;
 
 const ListContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   background-color: #ccc;
-  padding: 10px;
+  width: 100%;
 `;
  
 function Acervo() {
@@ -63,6 +63,7 @@ function Acervo() {
       {books.map(book => {
         return (
           <ListItem
+            id={book.id}
             titulo={book.titulo}
             autor={book.autor}
             editora={book.editora}
@@ -71,7 +72,7 @@ function Acervo() {
             paginas={book.qtd_paginas}
             obras={book.qtd_obras}
             disponibilidade={book.disponibilidade}
-            codigo={book.id}
+            codigo={book.codigo_obra}
           />
         )
       })}

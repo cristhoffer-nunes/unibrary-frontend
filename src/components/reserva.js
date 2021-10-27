@@ -7,6 +7,13 @@ import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { history } from '../history';
 
+const formikStyle = {
+  marginLeft: '50%'
+};
+const tituloStyle = {};
+const labelStyle = {};
+const fieldStyle = {};
+const btnStyle = {};
 
 const reserva = () => {
     const handleSubmit = (values) => {
@@ -54,21 +61,21 @@ const reserva = () => {
 
 
         
-            <Formik initialValues={ {} || ''} onSubmit={handleSubmit}>
+            <Formik style={formikStyle} initialValues={ {} || ''} onSubmit={handleSubmit}>
 
                 <Form>
-                    <div>
-                        LOGIN
+                    <div  style={tituloStyle}>
+                        RESERVA
                     </div>
-                    <label>
-                        <div>Número de Matrícula:</div>
-                        <Field name="numeroMatricula"/>
+                    <label >
+                        <div style={labelStyle} >Número de Matrícula:</div>
+                        <Field style={fieldStyle} name="numeroMatricula" className="field-reserva"/>
                     </label>
-                    <label>
-                        <div>Código da Obra:</div>
-                        <Field name="obra" type="text"  />
+                    <label >
+                        <div style={labelStyle} >Código da Obra:</div>
+                        <Field style={fieldStyle} name="obra" type="text"  className="field-reserva"/>
                     </label>
-                    <button type="submit">Reservar</button>
+                    <button style={btnStyle} type="submit">Reservar</button>
                 </Form>
             </Formik>           
         </Container>

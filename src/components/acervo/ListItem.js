@@ -7,9 +7,13 @@ const ItemContainer = styled.div`
     height: 180px;
     width: 350px;
     color: #fff;
-    margin-bottom: 5px;
     padding: 30px;
-    
+    margin: 10px;
+    margin-left: 20px;
+`;
+
+const IdPane = styled.div`
+    color: #fff;
 `;
 
 const TitlePane = styled.div`
@@ -53,11 +57,14 @@ const AvailablePane = styled.div`
 
 const CodePane = styled.div`
     text-align: center;
+    color: #fff;
 `;
+
 
 function ListItem(props) {
     return (
             <ItemContainer>
+                <IdPane>{props.id}</IdPane>
                 <TitlePane>{props.titulo}</TitlePane>
                 <AuthorPane>{props.autor}</AuthorPane>
                 <EditorsPane>{props.editora}</EditorsPane>

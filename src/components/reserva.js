@@ -68,16 +68,19 @@ const reserva = () => {
                         RESERVA
                     </div>
                     <label >
-                        <div style={labelStyle} >Número de Matrícula:</div>
+                        <div className="heading-reserva">Número de Matrícula:</div>
                         <Field style={fieldStyle} name="numeroMatricula" className="field-reserva"/>
                     </label>
                     <label >
-                        <div style={labelStyle} >Código da Obra:</div>
+                        <div className="heading-reserva">Código da Obra:</div>
                         <Field style={fieldStyle} name="obra" type="text"  className="field-reserva"/>
                     </label>
                     <button style={btnStyle} type="submit">Reservar</button>
                 </Form>
-            </Formik>           
+            </Formik>  
+            <footer className="footer">
+              &copy;Unibrary 2021
+            </footer>         
         </Container>
     )
 }

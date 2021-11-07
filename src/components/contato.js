@@ -3,8 +3,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import { history } from '../history'
+import { Field, Formik, Form } from 'formik';
 
 function contato (){
+
+  const doSomething = () => {
+      alert('Envio Confirmado!')
+      window.location.reload()
+  }
 
   const handleClick = () => {
 
@@ -31,6 +37,26 @@ function contato (){
             </Container>
           </Navbar>
         </div>
+
+
+            <Formik initialValues={ {} || ''} onSubmit={doSomething}>
+
+                <Form>
+                    <div>
+                        CONTATO
+                    </div>
+                    <label>
+                        <div>Número de Matrícula:</div>
+                        <Field name="numeroMatricula"/>
+                    </label>
+                    <label>
+                        <div>Descreva o motivo do seu contato:</div>
+                        <textarea></textarea>
+                    </label>
+                    <button type="submit">Enviar</button>
+                </Form>
+            </Formik>
+
         </Container>
     )
 }

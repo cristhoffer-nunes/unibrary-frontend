@@ -395,3 +395,28 @@ form button{
 .heading-reserva{
     margin-bottom: 10px;
 }
+
+.campoInputCTT input,
+.campoInputCTT textarea{
+    outline: 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0px 7px 0 rgba(0, 0, 0, 0.01), 0 0px 2px 0 rgba(0, 0, 0, 0.08);
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.campoInputCTT textarea{
+    min-height: 80px;
+    max-height: 80px;
+    margin-bottom: 40px;
+    padding: 20px;
+    
+    min-width: 280px;
+    max-width: 280px;
+}
+
+.campoInputCTT input{
+    height: 40px;
+    width: 300px;
+}

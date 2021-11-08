@@ -42,14 +42,14 @@ function contato (){
             <Formik initialValues={ {} || ''} onSubmit={doSomething}>
 
                 <Form>
-                    <div>
+                    <div className="cabecalhoCTT">
                         CONTATO
                     </div>
-                    <label>
+                    <label className="campoInputCTT">
                         <div>Número de Matrícula:</div>
                         <Field name="numeroMatricula"/>
                     </label>
-                    <label>
+                    <label className="campoInputCTT">
                         <div>Descreva o motivo do seu contato:</div>
                         <textarea></textarea>
                     </label>
@@ -57,6 +57,9 @@ function contato (){
                 </Form>
             </Formik>
 
+            <footer className="footer">
+              &copy;Unibrary 2021
+            </footer>  
         </Container>
     )
 }

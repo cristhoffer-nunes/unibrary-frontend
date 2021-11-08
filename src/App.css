@@ -278,8 +278,9 @@
     align-items: center;
     justify-content: space-evenly;
     vertical-align: middle;
+    position: relative;
+    top: 15%;
     color: white;
-    padding-top: 200px;
 }
 
 .input-dado{
@@ -308,6 +309,7 @@
 .form form{
     display: flex;
     flex-direction: column;
+    margin-top: -100px;
 }
 
 .form form label{
@@ -337,9 +339,9 @@
     height: 40px;
     width: 200px;
     padding: 10px;
-    position: absolute;
-    top: 165px;
-    right: 445px;
+    position: relative;
+    left: 88px;
+    top: -35px;
     color: #1d1d1d;
     font-size: 25px;
     vertical-align: middle;
